@@ -1,0 +1,27 @@
+{
+  "schema": "asdale-profit-profile/1",
+  "name": "amazon",
+  "display_name": "Amazon (US, individual seller)",
+  "description": "Estimate-only fee profile for an individual (pay-per-item) US Amazon seller. Copy and edit this file; nothing platform-specific is hard-coded.",
+  "currency": "USD",
+  "final_value_fee": {
+    "base": "sale_plus_shipping",
+    "percent": 15.0,
+    "flat": 0.0
+  },
+  "order_fee_flat": 0.99,
+  "category_overrides": [
+    {
+      "match": "book|books",
+      "percent": 15.0,
+      "note": "Media categories use referral fees in this range; media sets vary."
+    },
+    {
+      "match": "amazon device",
+      "percent": 45.0,
+      "note": "Very high referral rate on Amazon's own devices."
+    }
+  ],
+  "notes": "The 15% referral fee is the most common rate; real rates run from 8% to over 45% depending on category. The 0.99 order fee applies to individual (non-Professional) sellers; Professional sellers pay a monthly fee instead, so set order_fee_flat to 0 and budget the monthly cost yourself.",
+  "disclaimer": "Fee rates change often and vary by category, plan, and fulfillment (MFN vs FBA). FBA fulfillment fees are NOT modeled here; add them into item_cost or shipping_cost yourself. This file is an editable pattern, not official data; check Amazon's fee schedule."
+}

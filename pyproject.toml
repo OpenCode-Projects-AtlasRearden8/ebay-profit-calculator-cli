@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reseller-profit"
+version = "1.0.0"
+description = "Plain-English reseller profit calculator for eBay, Amazon, and Mercari listings, with editable fee profiles, break-even price, and CSV batch mode."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["ebay", "amazon", "mercari", "reselling", "profit", "break-even", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+reseller-profit = "reseller_profit.cli:main"
+profitcalc = "reseller_profit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+reseller_profit = ["fee_profiles/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,16 @@
+{
+  "schema": "asdale-profit-profile/1",
+  "name": "mercari",
+  "display_name": "Mercari (US)",
+  "description": "Estimate-only fee profile for a US Mercari seller. Copy and edit this file; nothing platform-specific is hard-coded.",
+  "currency": "USD",
+  "final_value_fee": {
+    "base": "sale",
+    "percent": 10.0,
+    "flat": 0.0
+  },
+  "order_fee_flat": 0.0,
+  "category_overrides": [],
+  "notes": "Mercari's seller fee is 10% of the item price. As of recent policy, the buyer pays a processing fee rather than the seller; if that changes back, add it to final_value_fee.",
+  "disclaimer": "Fee rates change often. This file is an editable pattern, not official data; check Mercari's seller help pages."
+}

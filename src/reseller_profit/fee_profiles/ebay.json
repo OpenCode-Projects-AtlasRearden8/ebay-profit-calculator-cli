@@ -1,0 +1,27 @@
+{
+  "schema": "asdale-profit-profile/1",
+  "name": "ebay",
+  "display_name": "eBay (US, standard seller)",
+  "description": "Estimate-only fee profile for a standard US eBay seller without Store-negotiated rates. Copy and edit this file; nothing platform-specific is hard-coded.",
+  "currency": "USD",
+  "final_value_fee": {
+    "base": "buyer_total",
+    "percent": 13.6,
+    "flat": 0.30
+  },
+  "order_fee_flat": 0.0,
+  "category_overrides": [
+    {
+      "match": "book|magazine|vhs",
+      "percent": 15.1,
+      "note": "eBay's higher rate for books, movies, and music categories."
+    },
+    {
+      "match": "refurbished",
+      "percent": 12.0,
+      "note": "Typical lower rate for refurbished listings."
+    }
+  ],
+  "notes": "The 0.30 flat is the per-order fee on most sales. Adjust 'percent' to match your actual category and any negotiated Store rates.",
+  "disclaimer": "Fee rates change often and vary by category, account, and promotion. This file is an editable pattern, not official data; check the fee table on eBay's site."
+}
